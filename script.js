@@ -3,34 +3,54 @@
 
 (function () {
 
-    const calculadora = document.getElementById('adms-caculator');
+    function iniciarCalculadoraMadnezz() {
 
-    if (!calculadora) return;
+        const calculadora = document.getElementById('adms-caculator');
 
-    function calcularRecursosMadnezz() {
+        if (!calculadora) return;
 
-        function obterValor(nome) {
-            const elemento = calculadora.querySelector(
-                `[data-valor="${nome}"]`
-            );
+        function calcularRecursosMadnezz() {
 
-            return Number(elemento?.textContent.trim().replace(',', '.')) || 0;
+            function obterValor(nome) {
+                const elemento = calculadora.querySelector(
+                    `[data-valor="${nome}"]`
+                );
+
+                return Number(elemento?.textContent.trim().replace(',', '.')) || 0;
+            }
+
+            const paAdm = obterValor('pa-adm');
+            const ouroAdm = obterValor('ouro-adm');
+
+            const paPost = obterValor('pa-post');
+            const ouroPost = obterValor('ouro-post');
+
+            calculadora.querySelector('#calc-total-pa').textContent =
+                (paAdm + paPost).toLocaleString('pt-BR');
+
+            calculadora.querySelector('#calc-total-ouro').textContent =
+                (ouroAdm + ouroPost).toLocaleString('pt-BR');
         }
 
-        const paAdm = obterValor('pa-adm');
-        const ouroAdm = obterValor('ouro-adm');
+        calcularRecursosMadnezz();
 
-        const paPost = obterValor('pa-post');
-        const ouroPost = obterValor('ouro-post');
+        setInterval(calcularRecursosMadnezz, 1000);
 
-        calculadora.querySelector('#calc-total-pa').textContent =
-            (paAdm + paPost).toLocaleString('pt-BR');
+        const observerCalculadoraMadnezz = new MutationObserver(function () {
+            calcularRecursosMadnezz();
+        });
 
-        calculadora.querySelector('#calc-total-ouro').textContent =
-            (ouroAdm + ouroPost).toLocaleString('pt-BR');
+        observerCalculadoraMadnezz.observe(document.body, {
+            childList: true,
+            characterData: true,
+            subtree: true
+        });
     }
 
-    calcularRecursosMadnezz();
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', iniciarCalculadoraMadnezz);
+    } else {
+        iniciarCalculadoraMadnezz();
+    }
 
-    setInterval(calcularRecursosMadnezz, 1000);
 })();
