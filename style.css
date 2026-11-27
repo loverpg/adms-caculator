@@ -156,6 +156,20 @@
     color: #fff;
 }
 
+
+#adms-caculator .calculadora-valor {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    background: rgba(15, 15, 15, 0.55);
+    color: #ddd;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    text-align: center;
+}
+
+
 /* RESPONSIVIDADE */
 
 @media (max-width: 480px) {
