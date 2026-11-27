@@ -1,14 +1,14 @@
 
 /* CALCULADORA DE RECURSOS - MADNEZZ */
-/* Todos os estilos ficam restritos ao #adms-caculator */
+/* Todos os estilos ficam restritos à .adms-caculator */
 
-#adms-caculator {
+.adms-caculator {
     width: 100%;
     max-width: 580px;
     margin: 0 auto;
 }
 
-#adms-caculator .calculadora-fundo {
+.adms-caculator .calculadora-fundo {
     box-sizing: border-box;
     position: relative;
     width: 100%;
@@ -16,7 +16,7 @@
     background: rgba(30, 30, 30, 0.43);
 }
 
-#adms-caculator .calculadora-texto {
+.adms-caculator .calculadora-texto {
     box-sizing: border-box;
     width: 100%;
     padding: 20px;
@@ -26,7 +26,7 @@
     color: #bbb;
 }
 
-#adms-caculator .calculadora-titulo {
+.adms-caculator .calculadora-titulo {
     padding: 10px 0 25px;
     font-family: 'canvas';
     font-size: 22px;
@@ -37,19 +37,19 @@
     color: #c9c9c9;
 }
 
-#adms-caculator .calculadora-colunas {
+.adms-caculator .calculadora-colunas {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 25px;
 }
 
-#adms-caculator .calculadora-grupo {
+.adms-caculator .calculadora-grupo {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-#adms-caculator .calculadora-subtitulo {
+.adms-caculator .calculadora-subtitulo {
     margin-bottom: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid #333;
@@ -62,7 +62,7 @@
     color: #c9c9c9;
 }
 
-#adms-caculator .calculadora-grupo label {
+.adms-caculator .calculadora-grupo label {
     font-family: 'canvas';
     font-size: 13px;
     font-weight: bold;
@@ -70,7 +70,7 @@
     color: #ddd;
 }
 
-#adms-caculator .calculadora-grupo input {
+.adms-caculator .calculadora-grupo input {
     box-sizing: border-box;
     width: 100%;
     padding: 10px;
@@ -83,15 +83,15 @@
     text-align: center;
 }
 
-#adms-caculator .calculadora-grupo input:focus {
+.adms-caculator .calculadora-grupo input:focus {
     border-color: #777;
 }
 
-#adms-caculator .calculadora-grupo input::placeholder {
+.adms-caculator .calculadora-grupo input::placeholder {
     color: #777;
 }
 
-#adms-caculator .calculadora-resultado-titulo {
+.adms-caculator .calculadora-resultado-titulo {
     margin-top: 35px;
     padding: 15px 0;
     border-bottom: 1px solid #333;
@@ -104,14 +104,14 @@
     color: #c9c9c9;
 }
 
-#adms-caculator .calculadora-resultados {
+.adms-caculator .calculadora-resultados {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
     padding: 20px 0;
 }
 
-#adms-caculator .calculadora-resultado {
+.adms-caculator .calculadora-resultado {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -122,7 +122,7 @@
     text-align: center;
 }
 
-#adms-caculator .calculadora-resultado span {
+.adms-caculator .calculadora-resultado span {
     font-family: 'canvas';
     font-size: 14px;
     font-weight: bold;
@@ -130,34 +130,14 @@
     color: #c9c9c9;
 }
 
-#adms-caculator .calculadora-resultado strong {
+.adms-caculator .calculadora-resultado strong {
     font-family: 'Poppins', sans-serif;
     font-size: 25px;
     font-weight: bold;
     color: #ddd;
 }
 
-#adms-caculator #calc-limpar {
-    display: block;
-    margin: 10px auto 0;
-    padding: 9px 18px;
-    border: 1px solid #444;
-    background: rgba(15, 15, 15, 0.55);
-    color: #bbb;
-    font-family: 'canvas';
-    font-size: 11px;
-    letter-spacing: 2px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-#adms-caculator #calc-limpar:hover {
-    border-color: #888;
-    color: #fff;
-}
-
-
-#adms-caculator .calculadora-valor {
+.adms-caculator .calculadora-valor {
     box-sizing: border-box;
     width: 100%;
     padding: 10px;
@@ -169,27 +149,28 @@
     text-align: center;
 }
 
-
 /* RESPONSIVIDADE */
 
 @media (max-width: 480px) {
-    #adms-caculator .calculadora-texto {
+
+    .adms-caculator .calculadora-texto {
         padding: 15px;
     }
 
-    #adms-caculator .calculadora-colunas {
+    .adms-caculator .calculadora-colunas {
         gap: 12px;
     }
 
-    #adms-caculator .calculadora-subtitulo {
+    .adms-caculator .calculadora-subtitulo {
         font-size: 14px;
     }
 
-    #adms-caculator .calculadora-resultado span {
+    .adms-caculator .calculadora-resultado span {
         font-size: 11px;
     }
 
-    #adms-caculator .calculadora-resultado strong {
+    .adms-caculator .calculadora-resultado strong {
         font-size: 20px;
     }
+
 }
