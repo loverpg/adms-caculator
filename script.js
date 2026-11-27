@@ -1,56 +1,30 @@
-
-/* CALCULADORA DE RECURSOS - MADNEZZ */
-
 (function () {
+    const calculadora = document.getElementById('adms-caculator');
 
-    function iniciarCalculadoraMadnezz() {
+    if (!calculadora) return;
 
-        const calculadora = document.getElementById('adms-caculator');
+    function calcularRecursosMadnezz() {
+        function obterValor(nome) {
+            const elemento = calculadora.querySelector(
+                `[data-valor="${nome}"]`
+            );
 
-        if (!calculadora) return;
-
-        function calcularRecursosMadnezz() {
-
-            function obterValor(nome) {
-                const elemento = calculadora.querySelector(
-                    `[data-valor="${nome}"]`
-                );
-
-                return Number(elemento?.textContent.trim().replace(',', '.')) || 0;
-            }
-
-            const paAdm = obterValor('pa-adm');
-            const ouroAdm = obterValor('ouro-adm');
-
-            const paPost = obterValor('pa-post');
-            const ouroPost = obterValor('ouro-post');
-
-            calculadora.querySelector('#calc-total-pa').textContent =
-                (paAdm + paPost).toLocaleString('pt-BR');
-
-            calculadora.querySelector('#calc-total-ouro').textContent =
-                (ouroAdm + ouroPost).toLocaleString('pt-BR');
+            return Number(elemento?.textContent.trim().replace(',', '.')) || 0;
         }
 
-        calcularRecursosMadnezz();
+        const paAdm = obterValor('pa-adm');
+        const ouroAdm = obterValor('ouro-adm');
+        const paPost = obterValor('pa-post');
+        const ouroPost = obterValor('ouro-post');
 
-        setInterval(calcularRecursosMadnezz, 1000);
+        calculadora.querySelector('#calc-total-pa').textContent =
+            (paAdm + paPost).toLocaleString('pt-BR');
 
-        const observerCalculadoraMadnezz = new MutationObserver(function () {
-            calcularRecursosMadnezz();
-        });
-
-        observerCalculadoraMadnezz.observe(document.body, {
-            childList: true,
-            characterData: true,
-            subtree: true
-        });
+        calculadora.querySelector('#calc-total-ouro').textContent =
+            (ouroAdm + ouroPost).toLocaleString('pt-BR');
     }
 
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', iniciarCalculadoraMadnezz);
-    } else {
-        iniciarCalculadoraMadnezz();
-    }
+    calcularRecursosMadnezz();
+    setInterval(calcularRecursosMadnezz, 1000);
 
 })();
