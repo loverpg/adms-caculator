@@ -32,6 +32,5 @@
 
     calcularRecursosMadnezz();
 
-    setInterval(calcularRecursos, 1000);
-
+    setInterval(calcularRecursosMadnezz, 1000);
 })();
